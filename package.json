@@ -1,0 +1,9 @@
+{
+  "name": "proyecto-dashboard",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Dashboard de auditoria de ventas",
+  "scripts": {
+    "start": "node scripts/procesar.mjs"
+  }
+}
