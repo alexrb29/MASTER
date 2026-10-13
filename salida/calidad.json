@@ -1,60 +1,67 @@
 {
+  "generado_en": "2026-10-13T10:58:48.181Z",
+  "fuentes": {
+    "ventas": "datos/ventas.csv",
+    "productos": "datos/productos.json"
+  },
   "filas_entrada": 70,
+  "productos_catalogo": 8,
   "operaciones_validas": 60,
   "copias_duplicadas_excluidas": 5,
   "incidencias_excluidas": 5,
+  "conflictos_de_id": [],
   "duplicados": [
     {
       "venta_id": "V003",
       "fila_csv": 62,
-      "motivo": "Copia exacta de operación"
+      "motivo": "Copia exacta de la fila 4"
     },
     {
       "venta_id": "V011",
       "fila_csv": 63,
-      "motivo": "Copia exacta de operación"
+      "motivo": "Copia exacta de la fila 12"
     },
     {
       "venta_id": "V021",
       "fila_csv": 64,
-      "motivo": "Copia exacta de operación"
+      "motivo": "Copia exacta de la fila 22"
     },
     {
       "venta_id": "V036",
       "fila_csv": 65,
-      "motivo": "Copia exacta de operación"
+      "motivo": "Copia exacta de la fila 37"
     },
     {
       "venta_id": "V049",
       "fila_csv": 66,
-      "motivo": "Copia exacta de operación"
+      "motivo": "Copia exacta de la fila 50"
     }
   ],
   "incidencias": [
     {
       "venta_id": "V061",
       "fila_csv": 67,
-      "motivo": "Campo obligatorio ausente o vacío"
+      "motivo": "Campo obligatorio vacío: unidades"
     },
     {
       "venta_id": "V062",
       "fila_csv": 68,
-      "motivo": "Campo obligatorio ausente o vacío"
+      "motivo": "Campo obligatorio vacío: precio_unitario"
     },
     {
       "venta_id": "V063",
       "fila_csv": 69,
-      "motivo": "Producto inexistente: P99"
+      "motivo": "Producto inexistente en el catálogo: P99"
     },
     {
       "venta_id": "V064",
       "fila_csv": 70,
-      "motivo": "Valores numéricos no válidos"
+      "motivo": "Unidades no mayores que cero: -2"
     },
     {
       "venta_id": "V065",
       "fila_csv": 71,
-      "motivo": "Valores numéricos no válidos"
+      "motivo": "Precio no numérico: gratis"
     }
   ]
 }
