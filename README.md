@@ -85,14 +85,14 @@ Resultado del proceso: 60 operaciones válidas, 150 unidades y 2343,00 EUR de in
 En `salida/ventas.json` esas cuatro operaciones tienen ingresos 5, 4, 36 y 100 → 145 EUR. **Coinciden.**
 
 **b) Total por un segundo camino.** Las ventas válidas V001–V060 siguen un ciclo de 8 productos con precios fijos (P01 1×5=5, P02 2×2=4, P03 3×12=36, P04 4×25=100, P05 1×8=8, P06 2×18=36, P07 3×15=45, P08 4×20=80; ciclo = 314 EUR y 20 unidades). 60 ventas = 7 ciclos completos (56 ventas) + V057–V060 (P01–P04):
-- Ingresos: 7 × 314 + (5 + 4 + 36 + 100) = 2198 + 145 = **2343 EUR** ✔
-- Unidades: 7 × 20 + (1 + 2 + 3 + 4) = 140 + 10 = **150** ✔
+- Ingresos: 7 × 314 + (5 + 4 + 36 + 100) = 2198 + 145 = **2343 EUR** 
+- Unidades: 7 × 20 + (1 + 2 + 3 + 4) = 140 + 10 = **150** 
 
-**c) Suma de categorías = total:** Hogar 1088 + Deporte 875 + Tecnología 308 + Papelería 72 = **2343 EUR** ✔ (también lo verifica el script).
+**c) Suma de categorías = total:** Hogar 1088 + Deporte 875 + Tecnología 308 + Papelería 72 = **2343 EUR**.
 
-Comprobación de una categoría: Papelería = P01 (8 ventas × 5 = 40) + P02 (8 ventas × 4 = 32) = 72 EUR ✔.
+Comprobación de una categoría: Papelería = P01 (8 ventas × 5 = 40) + P02 (8 ventas × 4 = 32) = 72 EUR .
 
-**d) Cuadre de filas:** 60 + 5 + 5 = 70 ✔.
+**d) Cuadre de filas:** 60 + 5 + 5 = 70 .
 
 **e) Repetibilidad:** se ejecutó el proceso dos veces y `resumen.json` y `calidad.json` son idénticos salvo `generado_en`. Las fuentes `datos/*` tienen el mismo hash antes y después de ejecutar (no se modifican).
 
