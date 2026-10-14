@@ -68,22 +68,9 @@ El script comprueba automáticamente antes de guardar que `filas = válidas + co
 
 **Efecto en las métricas si no se hubieran tratado:** las 5 copias habrían sumado 185 EUR de más (36 + 36 + 8 + 100 + 5) y 12 unidades de más (3 + 3 + 1 + 4 + 1); además, el vacío de V061 tratado como 0 o el −2 de V064 habrían distorsionado unidades e ingresos.
 
-## 6. Resultados
+## 6. Cálculos comprobados
 
-| Métrica | Valor |
-| --- | --- |
-| Operaciones válidas | 60 |
-| Unidades totales | 150 |
-| Ingresos totales | 2343,00 EUR |
-
-| Categoría | Ingresos (EUR) | % |
-| --- | ---: | ---: |
-| Hogar | 1088,00 | 46,4 % |
-| Deporte | 875,00 | 37,3 % |
-| Tecnología | 308,00 | 13,1 % |
-| Papelería | 72,00 | 3,1 % |
-
-## 7. Comprobaciones realizadas
+Resultado del proceso: 60 operaciones válidas, 150 unidades y 2343,00 EUR de ingresos totales.
 
 **a) Cálculo manual de V001–V004** (una sola copia; V003 aparece dos veces, filas 4 y 62, y se cuenta una vez):
 
@@ -101,7 +88,7 @@ En `salida/ventas.json` esas cuatro operaciones tienen ingresos 5, 4, 36 y 100 �
 - Ingresos: 7 × 314 + (5 + 4 + 36 + 100) = 2198 + 145 = **2343 EUR** ✔
 - Unidades: 7 × 20 + (1 + 2 + 3 + 4) = 140 + 10 = **150** ✔
 
-**c) Suma de categorías = total:** 1088 + 875 + 308 + 72 = **2343 EUR** ✔ (también lo verifica el script).
+**c) Suma de categorías = total:** Hogar 1088 + Deporte 875 + Tecnología 308 + Papelería 72 = **2343 EUR** ✔ (también lo verifica el script).
 
 Comprobación de una categoría: Papelería = P01 (8 ventas × 5 = 40) + P02 (8 ventas × 4 = 32) = 72 EUR ✔.
 
@@ -113,13 +100,7 @@ Comprobación de una categoría: Papelería = P01 (8 ventas × 5 = 40) + P02 (8 
 
 **g) URL publicada:** tras el despliegue, comprobar que la fecha "Resumen generado" del dashboard coincide con `generado_en` de `salida/resumen.json` del último commit.
 
-## 8. Dashboard
-
-Muestra ingresos totales (EUR), operaciones válidas, unidades totales, registros excluidos por duplicación y por incidencias, periodo y fecha de generación, una gráfica de barras de ingresos por categoría, la tabla de categorías y el listado de excluidos. **Ninguna cifra está escrita a mano**: todo se lee con `fetch` desde `salida/*.json`.
-
-**¿Por qué barras?** Comparar categorías es comparar magnitudes de elementos discretos sin orden temporal. La longitud de una barra desde una base común en cero es lo que el ojo compara con más precisión (mejor que ángulos de un gráfico circular). Las barras son horizontales para que los nombres de categoría se lean sin girar, y están ordenadas de mayor a menor para responder directamente a la pregunta. Al ser una sola serie, se usa un único color.
-
-## 9. Mecanismo de actualización
+## 7. Mecanismo de actualización
 
 No hay ingestión continua ni streaming. Es un proceso **por lotes y manual**:
 
@@ -131,7 +112,7 @@ No hay ingestión continua ni streaming. Es un proceso **por lotes y manual**:
 
 Las nuevas ventas **solo** aparecen en el dashboard tras completar los pasos 2–5. Vercel no ejecuta el script: publica los JSON ya generados en el repositorio.
 
-## 10. Limitaciones
+## 8. Limitaciones
 
 - Datos sintéticos y pequeños; no permiten conclusiones sobre comercios reales.
 - El lector CSV solo sirve para este formato controlado (sin comillas, comas internas ni saltos de línea en campos). Para CSV arbitrarios habría que usar un parser adecuado.
